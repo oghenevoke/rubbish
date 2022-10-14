@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    {% load static %}
+    <div class="card bg-danger text-danger">
+        <img src="{% static 'aptech_consult/images/pexels-andrea-piacquadio-3772617.jpg' %}" width= "100%" height= "250" alt="...">
+        <div class="card-img-overlay">
+            <h2 class="card-title" align="center">Contact Page</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <h3 class="text text-danger" align="center">Contact Us</h3>
+                <form method="post">
+                    {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="fname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fname">
+                    <div id="fNameHelp" class="form-text">Your surname first</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                    <div id="emailHelp" class="form-text">Your first email</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject">
+                    <div id="subjectHelp" class="form-text">Your subject goes here</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="6"></textarea>
+                    <div id="messageHelp" class="form-text">Your message goes here</div>
+                  </div>
+
+                  <button type="submit" class="btn btn-danger">Submit</button>
+                </form>
+        </div>
+        <div class="col-sm-3">
+            <h3 class="text text-danger text-center">Locate Us.....</h3>
+            <br />
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126832.7874199296!2d3.340042799999992!3d6.581514300000011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1615290760507!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
